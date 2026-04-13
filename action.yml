@@ -1,0 +1,20 @@
+name: "ProtoConsent Validate"
+description: "Validate a .well-known/protoconsent.json declaration file"
+branding:
+  icon: "shield"
+  color: "blue"
+inputs:
+  file:
+    description: "Path to the protoconsent.json file"
+    required: false
+    default: ".well-known/protoconsent.json"
+outputs:
+  result:
+    description: '"pass" or "fail"'
+  errors:
+    description: "Number of errors found"
+  warnings:
+    description: "Number of warnings found"
+runs:
+  using: "node20"
+  main: "dist/index.js"

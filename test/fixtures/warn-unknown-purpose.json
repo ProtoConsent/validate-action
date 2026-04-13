@@ -1,0 +1,7 @@
+{
+  "protoconsent": "0.1",
+  "purposes": {
+    "functional": { "used": true },
+    "custom_purpose": { "used": true }
+  }
+}
