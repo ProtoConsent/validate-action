@@ -68,6 +68,37 @@ Errors fail the workflow. Warnings appear as annotations but don't fail.
 
 The action writes a check results table to the GitHub Actions job summary, visible in the workflow run UI.
 
+## CLI
+
+You can also validate files from the command line without GitHub Actions:
+
+```bash
+npx protoconsent-validate .well-known/protoconsent.json
+```
+
+Or run directly from the repository:
+
+```bash
+npx github:ProtoConsent/validate-action .well-known/protoconsent.json
+```
+
+If no file is specified, it defaults to `.well-known/protoconsent.json`.
+
+Output example:
+
+```
+  ✓ Version: "0.2"
+  ✓ 6 purpose(s) declared: functional, analytics, ads, personalization, third_parties, advanced_tracking.
+  ✓ Functional: used = true
+  ✓ Analytics: used = false
+  ✓ Storage region: eu
+  ✓ Last updated: 2026-04-13
+
+6 pass, 0 warn, 0 error
+```
+
+Exit code is 0 if no errors, 1 if any errors are found.
+
 ## License
 
 MIT
