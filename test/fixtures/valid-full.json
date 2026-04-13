@@ -1,17 +1,20 @@
 {
-  "protoconsent": "0.1",
+  "protoconsent": "0.2",
+  "last_updated": "2026-04-13",
   "purposes": {
     "functional": {
       "used": true,
       "legal_basis": "legitimate_interest",
       "sharing": "none",
-      "provider": "Self-hosted"
+      "providers": ["Self-hosted"],
+      "retention": { "type": "session" }
     },
     "analytics": {
       "used": true,
       "legal_basis": "consent",
       "sharing": "none",
-      "provider": "Plausible"
+      "providers": ["Plausible"],
+      "retention": { "type": "fixed", "value": 30, "unit": "days" }
     },
     "ads": { "used": false },
     "personalization": { "used": false },
@@ -22,5 +25,8 @@
     "storage_region": "eu",
     "international_transfers": false
   },
-  "rights_url": "https://example.com/privacy"
+  "links": {
+    "policy": "https://example.com/privacy",
+    "rights": "https://example.com/privacy#rights"
+  }
 }
