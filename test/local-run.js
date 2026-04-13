@@ -1,6 +1,10 @@
 #!/usr/bin/env node
+// ProtoConsent validate-action
 // Local test runner - simulates what the action does without @actions/core
 // Usage: node test/local-run.js [path-to-json]
+//
+// Copyright (C) 2026 ProtoConsent contributors
+// SPDX-License-Identifier: MIT
 
 "use strict";
 
