@@ -8,7 +8,7 @@
 
 <p align="center"><em>User-side, purpose-based consent for the web</em></p>
 
-A GitHub Action that validates `.well-known/protoconsent.json` declaration files against the [ProtoConsent specification](https://github.com/ProtoConsent/ProtoConsent/blob/main/design/spec/protoconsent-well-known.md). See the main repo for full documentation.
+A GitHub Action that validates `.well-known/protoconsent.json` declaration files against the [ProtoConsent specification v0.2](https://github.com/ProtoConsent/ProtoConsent/blob/main/design/spec/protoconsent-well-known.md). See the main repo for full documentation.
 
 ## Usage
 
@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ProtoConsent/validate-action@v1
+      - uses: ProtoConsent/validate-action@main
 ```
 
 ## Inputs
@@ -44,20 +44,22 @@ jobs:
 
 ## What it checks
 
-1. `protoconsent` version field (must be `"0.1"`)
+1. `protoconsent` version field (`"0.2"`)
 2. `purposes` object with at least one known purpose
-3. Per-purpose: `used` (boolean), optional `legal_basis`, `sharing`, `provider`
-4. Optional `data_handling`: `storage_region` (string), `international_transfers` (boolean)
-5. Optional `rights_url` (HTTPS recommended)
-6. Unknown fields flagged as info
-7. File size limit (50 KB)
+3. Per-purpose: `used` (boolean), optional `legal_basis`, `sharing`, `providers` (array), `retention` (object)
+4. `retention` discriminated union: `session`, `fixed` (with `value`/`unit`), or `until_withdrawal`
+5. Optional `links`: `policy`, `rights` (HTTPS recommended)
+6. Optional `last_updated` (ISO 8601 date, YYYY-MM-DD)
+7. Optional `data_handling`: `storage_region` (string), `international_transfers` (boolean)
+8. Unknown fields flagged as info
+9. File size limit (50 KB)
 
 Errors fail the workflow. Warnings appear as annotations but don't fail.
 
 ## Custom file path
 
 ```yaml
-- uses: ProtoConsent/validate-action@v1
+- uses: ProtoConsent/validate-action@main
   with:
     file: "public/.well-known/protoconsent.json"
 ```
