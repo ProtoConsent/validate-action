@@ -1,10 +1,12 @@
 {
-  "name": "@protoconsent/validate-action",
+  "name": "protoconsent-validate",
   "version": "1.0.0",
-  "description": "GitHub Action to validate .well-known/protoconsent.json files",
+  "description": "GitHub Action and CLI to validate .well-known/protoconsent.json files",
   "main": "src/index.js",
+  "bin": {
+    "protoconsent-validate": "./src/cli.js"
+  },
   "license": "MIT",
-  "private": true,
   "scripts": {
     "build": "ncc build src/index.js -o dist --source-map --license licenses.txt",
     "test": "node --test test/validate-core.test.js"
