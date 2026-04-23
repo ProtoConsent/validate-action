@@ -1,18 +1,34 @@
 {
   "name": "protoconsent-validate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "GitHub Action and CLI to validate .well-known/protoconsent.json files",
   "main": "src/index.js",
   "bin": {
     "protoconsent-validate": "./src/cli.js"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ProtoConsent/validate-action.git"
+  },
+  "homepage": "https://protoconsent.org/validate.html",
+  "bugs": {
+    "url": "https://github.com/ProtoConsent/validate-action/issues"
+  },
+  "keywords": [
+    "protoconsent",
+    "privacy",
+    "consent",
+    "well-known",
+    "validator",
+    "github-action"
+  ],
   "scripts": {
     "build": "ncc build src/index.js -o dist --source-map --license licenses.txt",
     "test": "node --test test/validate-core.test.js"
   },
   "dependencies": {
-    "@actions/core": "^1.10.1"
+    "@actions/core": "^2.0.0"
   },
   "devDependencies": {
     "@vercel/ncc": "^0.38.1"
