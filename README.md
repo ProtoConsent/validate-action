@@ -8,6 +8,12 @@
 
 <p align="center"><em>User-side, purpose-based consent for the web</em></p>
 
+<p align="center">
+  <a href="https://github.com/ProtoConsent/ProtoConsent"><strong>Browser extension</strong></a> &middot;
+  <a href="https://github.com/ProtoConsent/data"><strong>Blocklists</strong></a> &middot;
+  <a href="https://protoconsent.org"><strong>Website</strong></a>
+</p>
+
 A GitHub Action that validates `.well-known/protoconsent.json` declaration files against the [ProtoConsent specification v0.2](https://github.com/ProtoConsent/ProtoConsent/blob/main/design/spec/protoconsent-well-known.md). Part of the [ProtoConsent](https://github.com/ProtoConsent/ProtoConsent) project ([Chrome Web Store](https://chromewebstore.google.com/detail/protoconsent/dkcdkdcclhofocmkecccmikkfmfgfdlb)).
 
 ## Usage
